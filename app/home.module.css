@@ -1,95 +1,96 @@
-.homepage{
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
+.homepage {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
 }
 
-.home_image{
-    width: 40%;
-    display: inline-block;
-    border-radius: 180px;
-    filter: drop-shadow(0px 20px 14px rgba(0, 0, 0, 0.5));
-    animation: .5s rotate ease-in-out,.7s zoominout infinite alternate .5s;
+.home_image {
+  width: 35%;
+  display: inline-block;
+  border-radius: 180px;
+  filter: drop-shadow(0px 20px 14px rgba(0, 0, 0, 0.5));
+  animation: 0.7s zoominout infinite alternate;
+  filter: brightness(80%);
 }
 
-.description{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.description h1{
-    font-size: 3em;
-    color: var(--background);
-    text-shadow: 2px 2px 10px var(--foreground);
+.description h1 {
+  font-size: 3em;
+  color: var(--background);
+  text-shadow: 2px 2px 10px var(--foreground);
 }
 
-.description h2{
-    font-size: 2em;
+.description h2 {
+  font-size: 2em;
 }
 
-.description p{
-    font-size: 1em;
+.description p {
+  font-size: 1em;
 }
 
-@keyframes zoominout{
-    from{
-        transform: scale(0.9, 0.9);
-    }
-    to{
-        transform: scale(1, 1);
-    }
+@keyframes zoominout {
+  from {
+    transform: scale(0.9, 0.9);
+  }
+  to {
+    transform: scale(1, 1);
+  }
 }
 
 @keyframes rotate {
-    from{
-        transform: rotate(0deg) scale(0.1);
-    }
-    to{
-        transform: rotate(360deg) scale(1);
-    }
+  from {
+    transform: rotate(0deg) scale(0.1);
+  }
+  to {
+    transform: rotate(360deg) scale(1);
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .homepage{
-        gap: 30px;
+  .homepage {
+    gap: 30px;
+  }
+  .home_image {
+    width: 10%;
+    flex: 1;
+  }
+  .description {
+    flex: 1;
+  }
+  @keyframes zoominout {
+    from {
+      transform: scale(0.7, 0.7);
     }
-    .home_image{
-        width: 10%;
-        flex: 1;
+    to {
+      transform: scale(0.8, 0.8);
     }
-    .description{
-        flex: 1;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg) scale(0.1);
     }
-    @keyframes zoominout{
-        from{
-            transform: scale(0.7, 0.7);
-        }
-        to{
-            transform: scale(0.8, 0.8);
-        }
+    to {
+      transform: rotate(360deg) scale(0.8);
     }
-    
-    @keyframes rotate {
-        from{
-            transform: rotate(0deg) scale(0.1);
-        }
-        to{
-            transform: rotate(360deg) scale(0.8);
-        }
-    }
+  }
 }
 
 @media screen and (max-width: 767px) {
-    .homepage{
-        flex-direction: column;
-        justify-content: center;
-        gap: 20px;
-    }
-    .home_image{
-        width: 50%;
-    }
+  .homepage {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  .home_image {
+    width: 50%;
+  }
 }
