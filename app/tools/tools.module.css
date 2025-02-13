@@ -1,0 +1,7 @@
+.tools{
+    height: 100vh;
+    justify-content: center;
+}
+.tools p{
+    font-size: 60px;
+}

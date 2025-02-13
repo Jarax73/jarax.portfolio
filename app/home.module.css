@@ -11,7 +11,7 @@
     display: inline-block;
     border-radius: 180px;
     filter: drop-shadow(0px 20px 14px rgba(0, 0, 0, 0.5));
-    animation: .7s zoominout infinite alternate;
+    animation: .5s rotate ease-in-out,.7s zoominout infinite alternate .5s;
 }
 
 .description{
@@ -40,5 +40,27 @@
     }
     to{
         transform: scale(1, 1);
+    }
+}
+
+@keyframes rotate {
+    from{
+        transform: rotate(0deg) scale(0.1);
+    }
+    to{
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .homepage{
+        gap: 30px;
+    }
+    .home_image{
+        width: 150px;
+        flex: 1;
+    }
+    .description{
+        flex: 1;
     }
 }
