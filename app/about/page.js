@@ -3,8 +3,8 @@ import styles from "./about.module.css";
 
 export default function Page() {
   return (
-    <main className={styles.about}>
+    <div className={styles.about}>
         <p>Working on it...</p>
-    </main>
+    </div>
   )
 }

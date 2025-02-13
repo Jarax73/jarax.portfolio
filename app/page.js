@@ -3,7 +3,6 @@ import styles from "./home.module.css";
 
 export default function Home() {
   return (
-      <main>
         <div className={styles.homepage}>
           <Image
               className={styles.home_image}
@@ -19,6 +18,5 @@ export default function Home() {
               <p>Je conçois des applications web et mobiles accessibles pour tous types d'écrans.</p>
             </div>
         </div>
-      </main>
   );
 }

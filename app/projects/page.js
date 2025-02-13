@@ -3,8 +3,8 @@ import styles from "./projects.module.css";
 
 export default function Page() {
   return (
-    <main className={styles.projects}>
+    <div className={styles.projects}>
         <p>Working on it...</p>
-    </main>
+    </div>
   )
 }

@@ -4,10 +4,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 50px;
 }
 
 .home_image{
-    width: 380px;
+    width: 40%;
     display: inline-block;
     border-radius: 180px;
     filter: drop-shadow(0px 20px 14px rgba(0, 0, 0, 0.5));
@@ -21,17 +22,17 @@
 }
 
 .description h1{
-    font-size: 48px;
+    font-size: 3em;
     color: var(--background);
     text-shadow: 2px 2px 10px var(--foreground);
 }
 
 .description h2{
-    font-size: 32px;
+    font-size: 2em;
 }
 
 .description p{
-    font-size: 16px;
+    font-size: 1em;
 }
 
 @keyframes zoominout{
@@ -57,10 +58,38 @@
         gap: 30px;
     }
     .home_image{
-        width: 150px;
+        width: 10%;
         flex: 1;
     }
     .description{
         flex: 1;
+    }
+    @keyframes zoominout{
+        from{
+            transform: scale(0.7, 0.7);
+        }
+        to{
+            transform: scale(0.8, 0.8);
+        }
+    }
+    
+    @keyframes rotate {
+        from{
+            transform: rotate(0deg) scale(0.1);
+        }
+        to{
+            transform: rotate(360deg) scale(0.8);
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .homepage{
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+    .home_image{
+        width: 50%;
     }
 }
