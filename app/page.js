@@ -1,7 +1,9 @@
+"use client";
 import Image from "next/image";
 import styles from "./home.module.css";
 
 export default function Home() {
+  const prompt = () => alert("Working on it...");
   return (
     <div className={styles.homepage}>
       <Image
@@ -21,6 +23,9 @@ export default function Home() {
           Je conçois des applications web et mobiles accessibles pour tous types
           d'écrans.
         </p>
+        <button className={styles.button} onClick={prompt}>
+          Contactez-moi
+        </button>
       </div>
     </div>
   );

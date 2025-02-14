@@ -21,7 +21,7 @@ const cards = [
   {
     title: "Carte 2",
     description:
-      "💡 Un développeur grandit à travers ses projets. Chaque ligne de code, chaque défi technique est une opportunité d’apprentissage.",
+      "💡 Un développeur grandit grâce aux projets. Chaque ligne de code, chaque défi technique est une opportunité d’apprentissage.",
     description1:
       "En tant que développeur, je ne veux pas me contenter d’attendre les opportunités : je veux les créer.",
     description2:

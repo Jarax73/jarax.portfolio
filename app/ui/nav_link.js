@@ -47,7 +47,10 @@ export default function Links() {
         </li>
       </ul>
 
-      <div className={`mobile ${isOpen && "z"}`}>
+      <div
+        className={isOpen ? "mobile" : "burger"}
+        // {`mobile ${isOpen && "z"}`}
+      >
         <button className="menu" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={40} /> : <Menu size={40} />}
         </button>
