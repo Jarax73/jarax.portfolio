@@ -9,22 +9,66 @@ import { motion } from "framer-motion";
 export default function Links() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [identifier, setIdentifier] = useState(null);
 
   useEffect(() => {
-    setIsOpen(false);
+    if (typeof window !== "undefined" && window.location.hash) {
+      const id = window.location.hash.substring(1);
+      setIdentifier(id);
+      // const element = document.getElementById(id);
+      console.log("id", id);
+      // if (element) {
+      //   element.scrollIntoView({ behavior: "smooth" });
+      // }
+    }
+    console.log("nav", pathname);
   }, [pathname]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section");
+      let currentSection = "";
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (
+          rect.top <= window.innerHeight / 2 &&
+          rect.bottom >= window.innerHeight / 2
+        ) {
+          currentSection = section.id;
+        }
+      });
+      setIdentifier(currentSection);
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log("ident", identifier);
+    setIsOpen(false);
+  }, [identifier]);
+
   return (
     <header>
       <ul className="large_screen">
         <li>
-          <Link href="/" className={pathname === "/" ? "active" : "link"}>
+          <Link
+            href="#home"
+            className={identifier === "home" ? "active" : "link"}
+            // scroll={false}
+          >
             Accueil
           </Link>
         </li>
         <li>
           <Link
-            href="about"
-            className={pathname === "/about" ? "active" : "link"}
+            href="#about"
+            className={identifier === "about" ? "active" : "link"}
+            // scroll={false}
           >
             À Propos
           </Link>
@@ -32,7 +76,8 @@ export default function Links() {
         <li>
           <Link
             href="tools"
-            className={pathname === "/tools" ? "active" : "link"}
+            className={identifier === "/tools" ? "active" : "link"}
+            // scroll={false}
           >
             Outils
           </Link>
@@ -40,7 +85,8 @@ export default function Links() {
         <li>
           <Link
             href="projects"
-            className={pathname === "/projects" ? "active" : "link"}
+            className={identifier === "/projects" ? "active" : "link"}
+            // scroll={false}
           >
             Projets
           </Link>
@@ -63,14 +109,17 @@ export default function Links() {
           >
             <ul>
               <li>
-                <Link href="/" className={pathname === "/" ? "active" : "link"}>
+                <Link
+                  href="#home"
+                  className={identifier === "home" ? "active" : "link"}
+                >
                   Accueil
                 </Link>
               </li>
               <li>
                 <Link
-                  href="about"
-                  className={pathname === "/about" ? "active" : "link"}
+                  href="#about"
+                  className={identifier === "about" ? "active" : "link"}
                 >
                   À Propos
                 </Link>
@@ -78,7 +127,7 @@ export default function Links() {
               <li>
                 <Link
                   href="tools"
-                  className={pathname === "/tools" ? "active" : "link"}
+                  className={identifier === "/tools" ? "active" : "link"}
                 >
                   Outils
                 </Link>
@@ -86,7 +135,7 @@ export default function Links() {
               <li>
                 <Link
                   href="projects"
-                  className={pathname === "/projects" ? "active" : "link"}
+                  className={identifier === "/projects" ? "active" : "link"}
                 >
                   Projets
                 </Link>

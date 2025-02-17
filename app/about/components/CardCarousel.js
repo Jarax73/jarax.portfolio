@@ -5,10 +5,15 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import styles from "../about.module.css";
 import Link from "next/link";
 
+const link = (
+  <Link href={"https://kadea.academy"} className={styles.link}>
+    Kadea Academy
+  </Link>
+);
+
 const cards = [
   {
-    description:
-      "🚀 Ma passion pour le développement informatique m’a toujours poussé à apprendre et à évoluer. C’est en rejoignant la ",
+    description: `🚀 Ma passion pour le développement informatique m’a toujours poussé à apprendre et à évoluer. C’est en rejoignant la `,
     description1:
       "que j’ai acquis les bases du développement web et mobile à travers des projets concrets et engageants.",
     description2:
@@ -40,7 +45,15 @@ export default function CardCarousel() {
 
   return (
     <div className={styles.description_container}>
-      <AnimatePresence mode="wait">
+      <div className={styles.description}>
+        <p className={styles.text}>
+          {cards[index].description} {link} {cards[index].description1}
+        </p>
+        <p className={styles.text}>{cards[index].description2}</p>
+        <p className={styles.text}>{cards[index].description3}</p>
+        {/* <p className={styles.text}>{cards[index].description4}</p> */}
+      </div>
+      {/* <AnimatePresence mode="wait">
         <motion.div
           key={index}
           className={styles.description}
@@ -50,28 +63,22 @@ export default function CardCarousel() {
           transition={{ duration: 0.5 }}
         >
           <p className={styles.text}>
-            {cards[index].description}{" "}
-            {index === 0 && (
-              <Link href="https://kadea.academy/" target="_blank">
-                KADEA Academy
-              </Link>
-            )}
+            {cards[index].description} {link} {cards[index].description1}
           </p>
-          <p className={styles.text}>{cards[index].description1}</p>
           <p className={styles.text}>{cards[index].description2}</p>
           <p className={styles.text}>{cards[index].description3}</p>
           <p className={styles.text}>{cards[index].description4}</p>
         </motion.div>
-      </AnimatePresence>
+      </AnimatePresence> */}
 
-      <div className={styles.chevrons_container}>
+      {/* <div className={styles.chevrons_container}>
         <button className={styles.chevrons} onClick={prevCard}>
           <ChevronLeft size={30} />
         </button>
         <button className={styles.chevrons} onClick={nextCard}>
           <ChevronRight size={30} />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }
