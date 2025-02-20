@@ -1,10 +1,294 @@
 .tools {
+  position: relative;
   width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20%;
+  padding-top: 10%;
+}
+
+.image {
+  width: 350px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -ms-transform: translate(-50%, -30%);
+  transform: translate(-50%, -30%);
+  filter: drop-shadow(-15px 20px 10px rgba(0, 0, 0, 0.5));
+}
+
+.tools_title {
+  display: none;
+}
+.tools h2 {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.left,
+.right {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
-.tools p {
+
+.icons {
+  width: 100%;
+  height: 100%;
+  padding: 10% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 7%;
+}
+
+.range {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.js {
+  border-radius: 50%;
+}
+
+.sql {
+  width: 65%;
+}
+
+.round {
+  width: 8em;
+  height: 8em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 0.6em;
+  font-weight: bold;
+  background-color: var(--white);
+  box-shadow: 0 0 20px var(--foreground);
+  animation: 0.7s zoominout ease-in-out alternate infinite;
+}
+
+/* .react{
+  animation: 5s rotate linear infinite;
+} */
+
+.right {
+  gap: 80px;
+}
+
+.tooltip {
+  position: relative;
+  gap: 100px;
+}
+
+.right p {
+  width: 1.8em;
+  height: 1.8em;
   font-size: 3.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--foreground);
+  animation: 0.7s zoominout ease-in-out alternate infinite;
+  cursor: pointer;
+}
+
+.tooltiptext {
+  opacity: 0;
+  width: 350px;
+  background-color: white;
+  color: var(--foreground);
+  text-align: center;
+  font-size: 0.8em;
+  padding: 15px;
+  border-radius: 6px;
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  margin-left: -180px;
+  transition: opacity 2s;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  opacity: 1;
+  /* visibility: visible; */
+}
+
+.tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+}
+
+@keyframes zoominout {
+  from {
+    transform: scale(0.9, 0.9);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1330px) {
+  .tools h2 {
+    font-size: 1.6em;
+  }
+  .image {
+    top: 60%;
+    width: 37%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .range p {
+    font-size: 0.5em;
+  }
+  .right {
+    gap: 0;
+  }
+  .tooltip_container {
+    height: 100%;
+    display: flex;
+    position: relative;
+  }
+  .tooltip {
+    justify-self: center;
+    position: absolute;
+    top: 30%;
+    transform: translate(-50%, -50%);
+  }
+  .right p {
+    width: 1.5em;
+    height: 1.5em;
+  }
+  .round {
+    width: 7em;
+    height: 7em;
+  }
+  .icons {
+    gap: 3%;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .tools {
+    padding-top: 15%;
+    gap: 5%;
+  }
+  .left,
+  .right {
+    flex: 1;
+    gap: 0;
+  }
+  .tools h2 {
+    font-size: 1.4em;
+  }
+  .right p {
+    width: 1.4em;
+    height: 1.4em;
+  }
+  .image {
+    display: none;
+  }
+  .icons {
+    justify-content: center;
+  }
+  .tooltip_container {
+    position: relative;
+    height: 100%;
+  }
+  .tooltip {
+    justify-self: center;
+    gap: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .icons {
+    padding: 0;
+    gap: 4%;
+  }
+  .tooltiptext {
+    width: 240px;
+    margin-left: -120px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .tools {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    gap: 40px;
+    position: relative;
+  }
+  .tools_title {
+    display: block;
+    position: sticky;
+    top: 0;
+    padding: 5% 2%;
+    margin: 0;
+    height: auto;
+    font-weight: bold;
+    font-size: 2.5em;
+    align-self: flex-start;
+    width: 100%;
+    background-color: var(--background);
+  }
+  .hide_span {
+    display: none;
+  }
+  .left {
+    width: 100%;
+    gap: 60px;
+    flex: 1;
+  }
+  .image {
+    display: none;
+  }
+  .icons {
+    width: 100%;
+    gap: 1.5em;
+    padding: 0;
+    z-index: -1;
+    padding: 0 2%;
+  }
+  .range {
+    justify-content: space-around;
+    padding: 0;
+  }
+  .right {
+    padding: 30% 2%;
+    justify-content: flex-start;
+  }
+  .tooltiptext {
+    width: 310px;
+    margin-left: -160px;
+    top: 110%;
+  }
 }

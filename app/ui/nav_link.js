@@ -75,8 +75,8 @@ export default function Links() {
         </li>
         <li>
           <Link
-            href="tools"
-            className={identifier === "/tools" ? "active" : "link"}
+            href="#tools"
+            className={identifier === "tools" ? "active" : "link"}
             // scroll={false}
           >
             Outils
@@ -126,8 +126,8 @@ export default function Links() {
               </li>
               <li>
                 <Link
-                  href="tools"
-                  className={identifier === "/tools" ? "active" : "link"}
+                  href="#tools"
+                  className={identifier === "tools" ? "active" : "link"}
                 >
                   Outils
                 </Link>

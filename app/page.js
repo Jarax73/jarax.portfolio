@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./home.module.css";
 import About from "./about/page";
 import { useEffect } from "react";
+import Tools from "./tools/page";
 
 export default function Home() {
   const prompt = () => alert("Working on it...");
@@ -34,6 +35,7 @@ export default function Home() {
         </div>
       </section>
       <About />
+      <Tools />
     </>
   );
 }

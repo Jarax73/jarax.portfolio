@@ -8,16 +8,9 @@ import CardCarousel from "./components/CardCarousel";
 export default function About() {
   const prompt = () => alert("Working on it...");
   return (
-    <section
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-      }}
-      id="about"
-    >
-      <div className={styles.about}>
+    <section className={styles.about} id="about">
+      <h1 className={styles.about_title}>À Propos</h1>
+      <div className={styles.section}>
         <div className={styles.contact_container}>
           <div className={styles.image_container}>
             <Image
