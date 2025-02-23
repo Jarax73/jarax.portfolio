@@ -21,31 +21,32 @@ export default function Links() {
       //   element.scrollIntoView({ behavior: "smooth" });
       // }
     }
+    setIsOpen(!isOpen);
     console.log("nav", pathname);
   }, [pathname]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll("section");
-      let currentSection = "";
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        if (
-          rect.top <= window.innerHeight / 2 &&
-          rect.bottom >= window.innerHeight / 2
-        ) {
-          currentSection = section.id;
-        }
-      });
-      setIdentifier(currentSection);
-    };
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const sections = document.querySelectorAll("section");
+  //     let currentSection = "";
+  //     sections.forEach((section) => {
+  //       const rect = section.getBoundingClientRect();
+  //       if (
+  //         rect.top <= window.innerHeight / 2 &&
+  //         rect.bottom >= window.innerHeight / 2
+  //       ) {
+  //         currentSection = section.id;
+  //       }
+  //     });
+  //     setIdentifier(currentSection);
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   handleScroll();
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   useEffect(() => {
     console.log("ident", identifier);
@@ -57,8 +58,8 @@ export default function Links() {
       <ul className="large_screen">
         <li>
           <Link
-            href="#home"
-            className={identifier === "home" ? "active" : "link"}
+            href="/"
+            className={pathname === "/" ? "active" : "link"}
             // scroll={false}
           >
             Accueil
@@ -66,8 +67,8 @@ export default function Links() {
         </li>
         <li>
           <Link
-            href="#about"
-            className={identifier === "about" ? "active" : "link"}
+            href="/about"
+            className={pathname === "/about" ? "active" : "link"}
             // scroll={false}
           >
             À Propos
@@ -75,8 +76,8 @@ export default function Links() {
         </li>
         <li>
           <Link
-            href="#tools"
-            className={identifier === "tools" ? "active" : "link"}
+            href="/tools"
+            className={pathname === "/tools" ? "active" : "link"}
             // scroll={false}
           >
             Outils
@@ -85,7 +86,7 @@ export default function Links() {
         <li>
           <Link
             href="projects"
-            className={identifier === "/projects" ? "active" : "link"}
+            className={pathname === "/projects" ? "active" : "link"}
             // scroll={false}
           >
             Projets
@@ -109,25 +110,22 @@ export default function Links() {
           >
             <ul>
               <li>
-                <Link
-                  href="#home"
-                  className={identifier === "home" ? "active" : "link"}
-                >
+                <Link href="/" className={pathname === "/" ? "active" : "link"}>
                   Accueil
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#about"
-                  className={identifier === "about" ? "active" : "link"}
+                  href="/about"
+                  className={pathname === "/about" ? "active" : "link"}
                 >
                   À Propos
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#tools"
-                  className={identifier === "tools" ? "active" : "link"}
+                  href="/tools"
+                  className={pathname === "/tools" ? "active" : "link"}
                 >
                   Outils
                 </Link>
@@ -135,7 +133,7 @@ export default function Links() {
               <li>
                 <Link
                   href="projects"
-                  className={identifier === "/projects" ? "active" : "link"}
+                  className={pathname === "/projects" ? "active" : "link"}
                 >
                   Projets
                 </Link>

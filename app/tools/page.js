@@ -18,13 +18,13 @@ import {
 export default function Tools() {
   return (
     <section className={styles.tools} id="tools">
-      <Image
+      {/* <Image
         src="/images/tools.png"
         alt=""
         width={750}
         height={800}
         className={styles.image}
-      />
+      /> */}
       <h1 className={styles.tools_title}>Outils</h1>
       <div className={styles.left}>
         <h2>

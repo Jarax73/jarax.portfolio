@@ -4,6 +4,8 @@ import styles from "./home.module.css";
 import About from "./about/page";
 import { useEffect } from "react";
 import Tools from "./tools/page";
+import Projects from "./projects/page";
+import Link from "next/link";
 
 export default function Home() {
   const prompt = () => alert("Working on it...");
@@ -29,13 +31,18 @@ export default function Home() {
             Je conçois des applications web et mobiles accessibles pour tous
             types d'écrans.
           </p>
-          <button className={styles.button} onClick={prompt}>
+          <Link
+            href="tel:+243813870415"
+            className={styles.button}
+            title="+243813870415"
+          >
             Contactez-moi
-          </button>
+          </Link>
         </div>
       </section>
-      <About />
+      {/* <About />
       <Tools />
+      <Projects /> */}
     </>
   );
 }
