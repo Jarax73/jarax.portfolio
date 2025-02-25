@@ -2,13 +2,28 @@
 
 import { Phone } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./projects.module.css";
 import Link from "next/link";
 
 export function Detail({ detail }) {
   const [click, setClick] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const viewDetails = () => setClick(!click);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <div
       className={!click ? styles.project : styles.detail}
@@ -18,7 +33,7 @@ export function Detail({ detail }) {
         <div className={styles.up}>
           <p onClick={viewDetails}>Retour</p>
           <Image
-            src={detail.image}
+            src={isMobile ? detail.mobileImage : detail.image}
             alt=""
             width={2300}
             height={4200}
@@ -51,7 +66,7 @@ export function Detail({ detail }) {
             </div>
           </div>
           <div className={styles.aside}>
-            <div className={detail.info_supp !== "" && styles.tooltip}>
+            <div className={detail.info_supp !== "" ? styles.tooltip : null}>
               {detail.info_supp !== "" && <p>?</p>}
               <p className={styles.tooltiptext}>{detail.info_supp}</p>
             </div>

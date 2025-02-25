@@ -5,9 +5,10 @@ const data = [
   {
     id: 1,
     image: "/images/jsquiz.png",
-    title: "JavaScript Quiz",
+    mobileImage: "/images/quiz_mobile.png",
+    title: "Quiz JavaScript",
     details:
-      "To master the basics of JavaScript, I had to do this exercise, which involved creating an SPA with Vanilla JavaScript. The aim of the application is to test the elementary level of the language by asking questions related to the basics of the language.",
+      "Pour maîtriser les bases du JavaScript, j'ai dû faire cet exercice qui consiste à créer une SPA avec Vanilla JavaScript. L'objectif de l'application est de tester le niveau élémentaire du langage en posant des questions relatives aux bases du langage.",
     info_supp: "",
     color: "#04724D",
     link: "https://jarax73.github.io/quiz-javascript/",
@@ -15,7 +16,8 @@ const data = [
   {
     id: 2,
     image: "/images/music.png",
-    title: "Music Application",
+    mobileImage: "/images/music_mobile.png",
+    title: "Application de Musique",
     details:
       "Cette application, je l'ai créée dans le but de maîtriser la nouvelle technologie que je venais d'apprendre, Reactjs. J'ai aussi eu à m'exercer avec les APIs, grâce à l'API de Spotify que j'ai utilisé dans cette application.",
     info_supp:
@@ -26,6 +28,7 @@ const data = [
   {
     id: 3,
     image: "/images/gravity.png",
+    mobileImage: "/images/gravity_mobile.png",
     title: "Gravity Team",
     details:
       "Ceci est une représentation d'une maquette que j'ai trouvé dans la communauté figma. Il y a plusieurs maquettes dans la série et parmi elles il y avait celle de Gravity Team",
@@ -36,6 +39,7 @@ const data = [
   {
     id: 4,
     image: "/images/litcollective.png",
+    mobileImage: "/images/litcollective_mobile.png",
     title: "LitCollective",
     details:
       "Ceci est une représentation d'une maquette que j'ai trouvé dans la communauté figma. Il y a plusieurs maquettes dans la série et parmi elles il y avait celle de LitCollective",

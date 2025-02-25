@@ -82,6 +82,7 @@
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .homepage {
     gap: 30px;
+    padding: 0 2%;
   }
   .home_image {
     width: 10%;
