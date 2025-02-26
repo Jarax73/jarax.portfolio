@@ -1,16 +1,8 @@
-"use client";
 import Image from "next/image";
 import styles from "./home.module.css";
-import About from "./about/page";
-import { useEffect } from "react";
-import Tools from "./tools/page";
-import Projects from "./projects/page";
 import Link from "next/link";
 
 export default function Home() {
-  const prompt = () => alert("Working on it...");
-  console.log("here", window.location.hash);
-
   return (
     <>
       <section className={styles.homepage} id="home">

@@ -12,46 +12,17 @@ export default function Links() {
   const [identifier, setIdentifier] = useState(null);
 
   useEffect(() => {
-    if (typeof window !== "undefined" && window.location.hash) {
-      const id = window.location.hash.substring(1);
-      setIdentifier(id);
-      // const element = document.getElementById(id);
-      console.log("id", id);
-      // if (element) {
-      //   element.scrollIntoView({ behavior: "smooth" });
-      // }
-    }
+    // if (typeof window !== "undefined" && window.location.hash) {
+    //   const id = window.location.hash.substring(1);
+    //   setIdentifier(id);
+    //   // const element = document.getElementById(id);
+    //   console.log("id", id);
+    //   // if (element) {
+    //   //   element.scrollIntoView({ behavior: "smooth" });
+    //   // }
+    // }
     setIsOpen(!isOpen);
-    console.log("nav", pathname);
   }, [pathname]);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const sections = document.querySelectorAll("section");
-  //     let currentSection = "";
-  //     sections.forEach((section) => {
-  //       const rect = section.getBoundingClientRect();
-  //       if (
-  //         rect.top <= window.innerHeight / 2 &&
-  //         rect.bottom >= window.innerHeight / 2
-  //       ) {
-  //         currentSection = section.id;
-  //       }
-  //     });
-  //     setIdentifier(currentSection);
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-  //   handleScroll();
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
-  useEffect(() => {
-    console.log("ident", identifier);
-    setIsOpen(false);
-  }, [identifier]);
 
   return (
     <header>
