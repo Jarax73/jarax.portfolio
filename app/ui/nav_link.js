@@ -21,7 +21,7 @@ export default function Links() {
     //   //   element.scrollIntoView({ behavior: "smooth" });
     //   // }
     // }
-    setIsOpen(!isOpen);
+    setIsOpen(false);
   }, [pathname]);
 
   return (
