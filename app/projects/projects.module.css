@@ -269,6 +269,9 @@
   .description {
     height: 210px;
   }
+  .detail .description {
+    width: 40%;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -280,6 +283,24 @@
   }
   .title span {
     font-size: 0.8em;
+  }
+  .detail_view {
+    justify-content: center;
+  }
+  .detail .down {
+    height: 40%;
+  }
+  .detail .up {
+    margin-top: 10%;
+    height: 40%;
+  }
+  .detail .image {
+    width: 60%;
+    height: 50%;
+    border-radius: 10px;
+  }
+  .detail .description {
+    width: 35%;
   }
   .button {
     font-size: 0.8em;
@@ -315,7 +336,7 @@
     width: 100%;
   }
   .detail .image {
-    width: 50%;
+    width: 40%;
     border-radius: 10px;
   }
   .presentation {
@@ -353,6 +374,7 @@
     width: 100%;
     gap: 20px;
     animation: go_down 4s ease-out;
+    position: relative;
   }
   @keyframes go_down {
     from {
@@ -382,5 +404,19 @@
   }
   .image {
     width: 45%;
+  }
+  .detail .tooltip {
+    position: static;
+  }
+  .tooltiptext {
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    margin: 5% 0;
+  }
+  .tooltiptext::after {
+    top: 100%;
+    left: 10%;
+    border-color: white transparent transparent transparent;
   }
 }
