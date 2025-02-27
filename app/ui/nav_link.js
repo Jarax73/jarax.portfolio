@@ -63,6 +63,15 @@ export default function Links() {
             Projets
           </Link>
         </li>
+        <li>
+          <Link
+            href="contact"
+            className={pathname === "/contact" ? "active" : "link"}
+            // scroll={false}
+          >
+            Contact
+          </Link>
+        </li>
       </ul>
 
       <div
@@ -107,6 +116,15 @@ export default function Links() {
                   className={pathname === "/projects" ? "active" : "link"}
                 >
                   Projets
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="contact"
+                  className={pathname === "/contact" ? "active" : "link"}
+                  // scroll={false}
+                >
+                  Contact
                 </Link>
               </li>
             </ul>

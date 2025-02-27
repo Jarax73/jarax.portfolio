@@ -76,9 +76,9 @@
   animation: 0.7s zoominout ease-in-out alternate infinite;
 }
 
-/* .react{
+.react {
   animation: 5s rotate linear infinite;
-} */
+}
 
 .right {
   gap: 80px;

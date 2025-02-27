@@ -70,9 +70,9 @@ export function Detail({ detail }) {
               {detail.info_supp !== "" && <p>?</p>}
               <p className={styles.tooltiptext}>{detail.info_supp}</p>
             </div>
-            <div className={styles.clickable}>
+            <Link className={styles.clickable} href="/contact">
               <Phone size={35} />
-            </div>
+            </Link>
           </div>
         </div>
       </div>
