@@ -14,7 +14,7 @@ export default function Contact() {
         />
         <div className={styles.icons}>
           <a
-            href="https://m.me/jakaps"
+            href="https://m.me/jared.kapila"
             target="_blank"
             rel="noopener noreferrer"
             title="JA Kap's"
