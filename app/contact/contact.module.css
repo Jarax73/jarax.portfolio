@@ -31,6 +31,7 @@
 
 .image {
   width: 20%;
+  filter: drop-shadow(-15px 10px 10px var(--foreground));
 }
 
 .icons {
@@ -68,9 +69,11 @@
   .icons {
     width: 60%;
   }
+
   .image {
     width: 30%;
   }
+
   .down p {
     width: 90%;
   }
@@ -80,6 +83,7 @@
   from {
     transform: scale(0.9, 0.9);
   }
+
   to {
     transform: scale(1, 1);
   }

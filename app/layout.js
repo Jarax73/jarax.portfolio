@@ -14,12 +14,31 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Kapila Jared-Alexandre",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
+  ),
   description: "Kapila Jared-Alexandre's personal website",
   manifest: "/manifest.json",
   icons: {
     icon: "/favicon_32x32.png",
     apple: "/favicon_152x152.png",
     android: "/favicon_152x152.png",
+  },
+  keywords: [
+    "Kapila",
+    "Jared",
+    "Kapila Jared-Alexandre",
+    "Kapila Jared",
+    "Développeur",
+    "Développeur web",
+    "Développeur mobile",
+  ],
+  openGraph: {
+    title: "Kapila Jared-Alexandre",
+    description: "Portfolio de Kapila Jared-Alexandre",
+    images: ["/favicon_192x192.png"],
+    url: process.env.NEXT_PUBLIC_APP_URL,
+    type: "website",
   },
 };
 
