@@ -36,6 +36,7 @@ export const metadata = {
   openGraph: {
     title: "Kapila Jared-Alexandre",
     description: "Portfolio de Kapila Jared-Alexandre",
+    siteName: "Kapila Jared-Alexandre",
     images: ["/favicon_192x192.png"],
     url: process.env.NEXT_PUBLIC_APP_URL,
     type: "website",
