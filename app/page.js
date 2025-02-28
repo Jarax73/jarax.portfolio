@@ -23,7 +23,12 @@ export default function Home() {
             Je conçois des applications web et mobiles accessibles pour tous
             types d'écrans.
           </p>
-          <Link href="/contact" className={styles.button} title="+243813870415">
+          <Link
+            href="/contact"
+            className={styles.button}
+            type="button"
+            title="+243813870415"
+          >
             Contactez-moi
           </Link>
         </div>

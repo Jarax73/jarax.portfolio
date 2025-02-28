@@ -25,7 +25,7 @@ export default function About() {
               l’innovation ?
             </span>
           </div>
-          <button className={styles.button} onClick={prompt}>
+          <button type="button" className={styles.button} onClick={prompt}>
             Voir mon CV
           </button>
         </div>

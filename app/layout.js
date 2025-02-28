@@ -40,6 +40,15 @@ export const metadata = {
     url: process.env.NEXT_PUBLIC_APP_URL,
     type: "website",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
+  },
 };
 
 export const viewport = {

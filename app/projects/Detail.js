@@ -49,7 +49,11 @@ export function Detail({ detail }) {
             <p className={styles.details}>{detail.details}</p>
             <div className={styles.button_container}>
               {!click ? (
-                <button className={styles.button} onClick={viewDetails}>
+                <button
+                  type="button"
+                  className={styles.button}
+                  onClick={viewDetails}
+                >
                   Voir Maintenant
                 </button>
               ) : (
