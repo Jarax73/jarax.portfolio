@@ -34,7 +34,7 @@ export function Detail({ detail }) {
           <p onClick={viewDetails}>Retour</p>
           <Image
             src={isMobile ? detail.mobileImage : detail.image}
-            alt=""
+            alt={detail.title}
             width={2300}
             height={4200}
             className={styles.image}

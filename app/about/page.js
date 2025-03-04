@@ -1,12 +1,10 @@
-"use client";
-
 import React from "react";
 import styles from "./about.module.css";
 import Image from "next/image";
 import CardCarousel from "./components/CardCarousel";
+import Link from "next/link";
 
 export default function About() {
-  const prompt = () => alert("Working on it...");
   return (
     <section className={styles.about} id="about">
       <h1 className={styles.about_title}>À Propos</h1>
@@ -25,9 +23,14 @@ export default function About() {
               l’innovation ?
             </span>
           </div>
-          <button type="button" className={styles.button} onClick={prompt}>
+          <Link
+            type="button"
+            href="/cv-FrenchKapila Jared.pdf"
+            target="_blank"
+            className={styles.button}
+          >
             Voir mon CV
-          </button>
+          </Link>
         </div>
 
         <CardCarousel />
