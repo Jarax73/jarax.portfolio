@@ -12,6 +12,7 @@ export default function Home() {
           alt="Jarax"
           width={480}
           height={550}
+          priority
         />
 
         <div className={styles.description}>

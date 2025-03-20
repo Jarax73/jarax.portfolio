@@ -17,6 +17,7 @@ export default function About() {
               width={400}
               className={styles.image}
               height={550}
+              priority
             />
             <span className={styles.tooltiptext}>
               📩 Envie d’échanger sur le développement, un projet ou
@@ -25,7 +26,7 @@ export default function About() {
           </div>
           <Link
             type="button"
-            href="/cv-FrenchKapila Jared.pdf"
+            href="/cv-FrenchKapila_Jared.pdf"
             target="_blank"
             className={styles.button}
           >

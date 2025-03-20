@@ -11,6 +11,7 @@ export default function Contact() {
           width={1000}
           height={800}
           className={styles.image}
+          priority
         />
         <div className={styles.icons}>
           <a
