@@ -22,7 +22,7 @@ export const metadata = {
   icons: {
     icon: "/favicon_32x32.png",
     apple: "/favicon_152x152.png",
-    android: "/favicon_152x152.png",
+    shortcut: "/favicon_32x32.png",
   },
   keywords: [
     "Kapila",
@@ -53,12 +53,12 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#4a5568",
+  themeColor: "#09090b",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

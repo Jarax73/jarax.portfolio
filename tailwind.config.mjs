@@ -10,6 +10,14 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        surface: "var(--surface)",
+        muted: "var(--muted)",
+        accent: "var(--accent)",
+        border: "var(--border)",
+      },
+      fontFamily: {
+        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
+        mono: ["var(--font-geist-mono)", "monospace"],
       },
     },
   },

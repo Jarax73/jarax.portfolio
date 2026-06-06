@@ -1,85 +1,125 @@
 "use client";
 
-import { Phone } from "lucide-react";
-import Image from "next/image";
 import { useEffect, useState } from "react";
-import styles from "./projects.module.css";
+import Image from "next/image";
 import Link from "next/link";
+import { X, ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
+import styles from "./projects.module.css";
+import btn from "../ui/button.module.css";
 
-export function Detail({ detail }) {
-  const [click, setClick] = useState(false);
+export function ProjectCard({ project, onOpen }) {
+  return (
+    <article
+      className={styles.card}
+      onClick={() => onOpen(project)}
+      onKeyDown={(e) => e.key === "Enter" && onOpen(project)}
+      role="button"
+      tabIndex={0}
+    >
+      <div className={styles.card_image_wrapper}>
+        <Image
+          src={project.image}
+          alt={project.title}
+          width={600}
+          height={400}
+          className={styles.card_image}
+        />
+      </div>
+      <div
+        className={styles.card_accent}
+        style={{ backgroundColor: project.color }}
+      />
+      <div className={styles.card_body}>
+        <span className={styles.card_number}>
+          {String(project.id).padStart(2, "0")}
+        </span>
+        <h3 className={styles.card_title}>{project.title}</h3>
+        <p className={styles.card_desc}>{project.details}</p>
+      </div>
+    </article>
+  );
+}
+
+export function ProjectModal({ project, onClose }) {
   const [isMobile, setIsMobile] = useState(false);
-  const viewDetails = () => setClick(!click);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 767);
-    };
-
+    const handleResize = () => setIsMobile(window.innerWidth <= 767);
     handleResize();
-
     window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
     return () => {
-      window.removeEventListener("resize", handleResize);
+      document.body.style.overflow = "";
     };
   }, []);
+
+  useEffect(() => {
+    const onKey = (e) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
   return (
-    <div
-      className={!click ? styles.project : styles.detail}
-      style={click ? { backgroundColor: detail.color } : {}}
+    <motion.div
+      className={styles.overlay}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={onClose}
     >
-      <div className={!click ? styles.presentation : styles.detail_view}>
-        <div className={styles.up}>
-          <p onClick={viewDetails}>Retour</p>
+      <motion.div
+        className={styles.modal}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 20 }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className={styles.modal_header}>
+          <h2 className={styles.modal_title}>{project.title}</h2>
+          <button
+            type="button"
+            className={styles.close}
+            onClick={onClose}
+            aria-label="Fermer"
+          >
+            <X size={18} />
+          </button>
+        </div>
+
+        <div className={styles.modal_content}>
           <Image
-            src={isMobile ? detail.mobileImage : detail.image}
-            alt={detail.title}
-            width={2300}
-            height={4200}
-            className={styles.image}
+            src={isMobile ? project.mobileImage : project.image}
+            alt={project.title}
+            width={1200}
+            height={800}
+            className={styles.modal_image}
           />
-        </div>
-        <div className={styles.down}>
-          <div className={styles.description}>
-            <h1 className={styles.title}>
-              <span>0{detail.id}</span>
-              {detail.title}
-            </h1>
-            <p className={styles.details}>{detail.details}</p>
-            <div className={styles.button_container}>
-              {!click ? (
-                <button
-                  type="button"
-                  className={styles.button}
-                  onClick={viewDetails}
-                >
-                  Voir Maintenant
-                </button>
-              ) : (
-                // <button>
-                <Link
-                  href={detail.link}
-                  target="_blank"
-                  className={styles.button}
-                >
-                  Visiter
-                </Link>
-                // </button>
-              )}
+          <div className={styles.modal_info}>
+            <p className={styles.modal_desc}>{project.details}</p>
+            {project.info_supp && (
+              <p className={styles.modal_note}>{project.info_supp}</p>
+            )}
+            <div className={styles.modal_actions}>
+              <Link
+                href={project.link}
+                target="_blank"
+                className={`${btn.button} ${btn.primary}`}
+              >
+                Visiter
+                <ExternalLink size={16} />
+              </Link>
+              <a href="#contact" className={`${btn.button} ${btn.secondary}`}>
+                Me contacter
+              </a>
             </div>
           </div>
-          <div className={styles.aside}>
-            <div className={detail.info_supp !== "" ? styles.tooltip : null}>
-              {detail.info_supp !== "" && <p>?</p>}
-              <p className={styles.tooltiptext}>{detail.info_supp}</p>
-            </div>
-            <Link className={styles.clickable} href="/contact">
-              <Phone size={35} />
-            </Link>
-          </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

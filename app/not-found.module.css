@@ -1,0 +1,29 @@
+.not_found {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  padding: 24px;
+}
+
+.code {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--font-geist-mono), monospace;
+  letter-spacing: -0.04em;
+}
+
+.not_found h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.not_found p {
+  color: var(--muted);
+  max-width: 400px;
+  margin-bottom: 8px;
+}

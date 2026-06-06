@@ -1,90 +1,61 @@
 .contact {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
+  /* page wrapper */
 }
 
-.up {
+.layout {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  gap: 20px;
-}
-
-.down {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.down p {
-  width: 35%;
   text-align: center;
-  font-size: 1.2em;
-  font-weight: bold;
+  gap: 32px;
+  margin-top: 48px;
 }
 
-.image {
-  width: 20%;
-  filter: drop-shadow(-15px 10px 10px var(--foreground));
+.message {
+  font-size: 1.0625rem;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 560px;
 }
 
-.icons {
+.socials {
   display: flex;
-  justify-content: space-evenly;
-  width: 20%;
-}
-
-.icons > * {
-  animation: 0.7s zoominout ease-in-out alternate infinite;
-}
-
-.gmail {
-  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
   justify-content: center;
+}
+
+.social_link {
+  display: flex;
   align-items: center;
-  width: 50px;
-  border-radius: 50%;
-  background-color: var(--white);
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  transition:
+    border-color 0.2s,
+    background-color 0.2s,
+    transform 0.15s;
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1330px) {
-  .down p {
-    width: 70%;
-  }
+.social_link:hover {
+  border-color: var(--accent);
+  background-color: var(--surface-raised);
+  transform: translateY(-2px);
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .down p {
-    width: 60%;
-  }
+.email {
+  font-size: 0.9375rem;
+  color: var(--muted);
 }
 
-@media screen and (max-width: 767px) {
-  .icons {
-    width: 60%;
-  }
-
-  .image {
-    width: 30%;
-  }
-
-  .down p {
-    width: 90%;
-  }
+.email a {
+  color: var(--accent);
+  transition: color 0.2s;
 }
 
-@keyframes zoominout {
-  from {
-    transform: scale(0.9, 0.9);
-  }
-
-  to {
-    transform: scale(1, 1);
-  }
+.email a:hover {
+  color: var(--accent-hover);
 }
