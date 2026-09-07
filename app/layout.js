@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Kapila Jared-Alexandre",
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
+    "https://jarax-portfolio.vercel.app" || "http://localhost:3000",
   ),
   description: "Kapila Jared-Alexandre's personal website",
   manifest: "/manifest.json",
@@ -38,7 +38,7 @@ export const metadata = {
     description: "Portfolio de Kapila Jared-Alexandre",
     siteName: "Kapila Jared-Alexandre",
     images: ["/favicon_192x192.png"],
-    url: process.env.NEXT_PUBLIC_APP_URL,
+    url: "https://jarax-portfolio.vercel.app",
     type: "website",
   },
   robots: {
